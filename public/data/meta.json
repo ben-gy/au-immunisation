@@ -1,0 +1,49 @@
+{
+  "generated": "2026-07-15T12:33:59.399Z",
+  "sa3Period": "Rolling four quarters of coverage data: December 2024, March 2025, June 2025 and September 2025 (01 October 2024 - 30 September 2025)",
+  "phnPeriod": "Rolling four quarters of coverage data: December 2024, March 2025, June 2025 and September 2025 (01 October 2024 - 30 September 2025)",
+  "ages": [
+    "1",
+    "2",
+    "5"
+  ],
+  "antigens": [
+    "dtp",
+    "polio",
+    "hib",
+    "hep",
+    "mmr",
+    "pneumo",
+    "menc",
+    "varicella"
+  ],
+  "counts": {
+    "sa3": 350,
+    "phn": 31,
+    "withFN": 31,
+    "below95": {
+      "1": 298,
+      "2": 323,
+      "5": 257
+    },
+    "below90": {
+      "1": 84,
+      "2": 166,
+      "5": 42
+    }
+  },
+  "sources": {
+    "sa3": [
+      "https://www.health.gov.au/resources/publications/nsw-childhood-immunisation-coverage-data-by-sa3",
+      "https://www.health.gov.au/resources/publications/vic-childhood-immunisation-coverage-data-by-sa3",
+      "https://www.health.gov.au/resources/publications/qld-childhood-immunisation-coverage-data-by-sa3",
+      "https://www.health.gov.au/resources/publications/wa-childhood-immunisation-coverage-data-by-sa3",
+      "https://www.health.gov.au/resources/publications/sa-childhood-immunisation-coverage-data-by-sa3",
+      "https://www.health.gov.au/resources/publications/tas-childhood-immunisation-coverage-data-by-sa3",
+      "https://www.health.gov.au/resources/publications/act-childhood-immunisation-coverage-data-by-sa3",
+      "https://www.health.gov.au/resources/publications/nt-childhood-immunisation-coverage-data-by-sa3"
+    ],
+    "phnAll": "https://www.health.gov.au/sites/default/files/2026-02/air_-_child_coverage_-_2025-q3_-_h_-_phn_-_all_kids.xlsx",
+    "phnFN": "https://www.health.gov.au/sites/default/files/2026-02/air_-_child_coverage_-_2025-q3_-_i_-_phn_fn.xlsx"
+  }
+}
