@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: cd pipeline && npm ci
+      - run: cd pipeline && npm install --no-audit --no-fund
       - run: node pipeline/collect.mjs
       - run: node pipeline/aggregate.mjs
       - name: Commit data
