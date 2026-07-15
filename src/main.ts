@@ -89,7 +89,7 @@ function render() {
           <p class="footer-src">Data: Australian Immunisation Register, Dept of Health, Disability and Ageing (${escapeHtml(period)}). Boundaries: ABS ASGS 2021 (CC BY 4.0). Not affiliated with any government agency.</p>
         </div>
         <div>
-          <p>Built by <a href="https://benrichardson.dev/">benrichardson.dev</a> · <a href="https://sites.benrichardson.dev" target="_blank" rel="noopener">more tools &amp; sites</a></p>
+          <p>Built by <a href="https://benrichardson.dev/">benrichardson.dev</a> · <a href="https://hub.benrichardson.dev" target="_blank" rel="noopener">more tools &amp; sites</a></p>
         </div>
       </div>
     </footer>
