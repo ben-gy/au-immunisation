@@ -171,7 +171,10 @@ select:focus, input:focus, .seg:focus-visible, .nav-tab:focus-visible, .icon-btn
 @media (max-width: 768px) { .map-canvas { height: 460px; } }
 .map-tip { font-size: var(--fs-sm); }
 .leaflet-container { font-family: var(--font-sans); background: #eaf0f3; }
-.map-wrap { position: relative; }
+/* isolate contains Leaflet's internal panes/controls (z-index up to 1000) in
+   their own stacking context so they can never paint over the About/drilldown
+   modals, which live at the page level. */
+.map-wrap { position: relative; isolation: isolate; z-index: 0; }
 
 /* ---------- table ---------- */
 .table-scroll { overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); background: var(--bg-panel); }
@@ -278,7 +281,7 @@ table.matrix td.na { background: var(--bg-surface) !important; color: var(--text
 .glossary-link { color: var(--accent); border-bottom: 1px dotted var(--accent); cursor: help; font-weight: 600; white-space: nowrap; }
 .gl-i { display: inline-flex; align-items: center; justify-content: center; width: 13px; height: 13px; margin-left: 2px; font-size: 9px; font-weight: 700; color: #fff; background: var(--accent); border-radius: 50%; vertical-align: super; }
 .gloss-pop {
-  position: fixed; z-index: 200; max-width: 320px;
+  position: fixed; z-index: 2300; max-width: 320px;
   background: #16232e; color: #eef4f3; border-radius: var(--radius-md);
   padding: var(--sp-md) var(--sp-lg); box-shadow: var(--shadow-md); font-size: var(--fs-sm); line-height: 1.5;
   opacity: 0; visibility: hidden; transition: opacity var(--tr-fast);
@@ -288,7 +291,7 @@ table.matrix td.na { background: var(--bg-surface) !important; color: var(--text
 
 /* ---------- hover tooltip (patterns/tooltip.ts) ---------- */
 .hover-tip {
-  position: fixed; z-index: 210; pointer-events: none;
+  position: fixed; z-index: 2400; pointer-events: none;
   background: #16232e; color: #eef4f3; font-size: var(--fs-sm); line-height: 1.45;
   padding: 7px 11px; border-radius: var(--radius-sm); box-shadow: var(--shadow-md); max-width: 300px;
   opacity: 0; transition: opacity var(--tr-fast); white-space: pre-line;
@@ -297,10 +300,11 @@ table.matrix td.na { background: var(--bg-surface) !important; color: var(--text
 .hover-tip b { color: #7fe0d4; }
 
 /* ---------- modal / drilldown ---------- */
-.overlay { position: fixed; inset: 0; background: rgba(16, 33, 46, 0.45); z-index: 100; opacity: 0; visibility: hidden; transition: var(--tr); }
+/* z-index sits deliberately above Leaflet's controls (1000) and panes (700). */
+.overlay { position: fixed; inset: 0; background: rgba(16, 33, 46, 0.45); z-index: 2000; opacity: 0; visibility: hidden; transition: var(--tr); }
 .overlay.open { opacity: 1; visibility: visible; }
 .modal {
-  position: fixed; z-index: 110; background: var(--bg-panel);
+  position: fixed; z-index: 2100; background: var(--bg-panel);
   box-shadow: var(--shadow-md);
 }
 /* about modal centred */
