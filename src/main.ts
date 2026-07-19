@@ -1,3 +1,8 @@
+// feedback:begin (managed by hub/scripts/feedback/backfill.mjs)
+import { mountFeedback } from './feedback';
+mountFeedback();
+// feedback:end
+
 import './style.css';
 import 'leaflet/dist/leaflet.css';
 import { loadData, type Dataset, type Age } from './data';
