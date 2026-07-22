@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Copyright (C) 2026 Ben Richardson — https://benrichardson.dev
+// Additional terms under AGPL-3.0 section 7(b) apply; see ADDITIONAL-TERMS.md.
 // Coverage colour scale — diverging around the 95% herd-immunity line.
 // The SAME scale is used everywhere (map, table pills, matrix, bars, histogram)
 // so a colour always means the same coverage level.
